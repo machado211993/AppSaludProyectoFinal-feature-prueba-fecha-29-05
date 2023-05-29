@@ -1,0 +1,234 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --font_Text: 'Montserrat', sans-serif;
+}
+
+.header{
+    height: 100px;
+}
+
+.footer{
+    height: 100px;
+}
+
+.main{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+body {
+    width: 100vw;
+    font-family: var(--font_Text);
+    font-size: 14px;
+    min-height: calc(100vh - (100px + 100px));
+    background-image: url(../imagen/fondo.svg);
+    background-repeat:no-repeat;
+    background-position-x:center;
+}
+
+.conte_turno {
+    margin: auto;
+    width: 600px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #dceafc;
+    box-shadow: 10px 10px 15px black;
+}
+
+
+.header_turnero {
+    width: 95%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+}
+
+.inf-pac{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.inf-pac input{
+    font-size: 35px;
+    background-color: transparent;
+}
+
+.inf-med input{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+}
+
+.inf-med{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.input_inf-os{
+    text-align: center;
+}
+
+.input_inf-na{
+    text-align: center;
+}
+
+
+.titulo_turnero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dtos_paciente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dtos_paciente input{
+    height: 25x;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+}
+
+.input_Nom{
+    text-align: start;
+    margin-left: 10px ;
+    background: transparent;
+}
+
+.input_Ape{
+    text-align: end;
+    background: transparent;
+}
+
+.body_turnero {
+    width: 100%;
+    padding: 5px;
+}
+
+.body_turnero form{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.datos_Prof {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.datos_Prof input{
+        background-color: lightskyblue;
+}
+
+.input_Id-Pro{
+    margin-top: 35px;
+}
+
+.input_NomyApe-Pro{
+    margin-top: 20px;
+}
+
+.input_Ape-Pro{
+    margin-top: 10px;
+}
+
+.input_Nom-Pro{
+    margin-top: 5px;
+}
+
+.input_Mes_Con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.input_dia_Con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.input_hor_Con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.datos_Prof div{
+    width: 100%;
+    margin-left: 2px;
+}
+
+.datos_btn {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    padding: 5px;
+}
+
+.datos_fyh {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.datos_fyh label{
+    width: 90%;
+    text-align: start;
+    padding-top: 5px;
+    padding-left: 13px;
+}
+
+.datos_fyh textarea{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.btn_buttom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_buttom button {
+    width: 65%;
+    margin-top: 15px;
+    height: 35px;
+    background-color: #005187;
+    color: white;
+}
+
+.btn_buttom p {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input:readonly {
+    background-color: black;
+    border: none;
+}
+

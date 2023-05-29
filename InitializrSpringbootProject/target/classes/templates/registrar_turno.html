@@ -1,0 +1,199 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+    <head><title>Sacar Turno</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,100;1,400;1,600&family=Roboto+Condensed:wght@300;400&display=swap"
+            rel="stylesheet"
+            />
+        <link
+            rel="stylesheet"
+            th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css}"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="shoformulariortcut icon"
+            href="@{https://cdn0.iconfinder.com/data/icons/scenarium-vol-10/128/015-512.png}"
+            />
+
+        <link rel="stylesheet" href="../static/css/turno.css">
+        <link rel="stylesheet" th:href="@{/css/turno.css}">
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" th:href="@{https://cdn0.iconfinder.com/data/icons/scenarium-vol-10/128/015-512.png}">
+
+    </head>
+    <body>
+
+        <div class="container hero">
+
+            <section>
+                <nav th:replace= "/fragments/navbar :: nav"></nav>
+                <section class="conte_turno">
+                    <div class="header_turnero">
+                        <div class="dtos_paciente">
+                            <div class="inf-pac">
+                                <div>
+                                    <input
+                                        type="text"
+                                        readonly
+                                        style="background-color: transparent; border: none;"
+                                        class="form-control input_Ape"
+                                        th:value="${session.usuariosession.apellido}"
+                                        />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        readonly
+                                        style="background-color: transparent; border: none;"
+                                        class="form-control input_Nom"
+                                        th:value="${session.usuariosession.nombre}"
+                                        />
+                                </div>
+                            </div>
+
+
+                            <!--                        <div class="inf-pac">
+                                                                                   <div>
+                                                            <input
+                                                                type="text"
+                                                                readonly
+                                                                class="form-control input_inf-os"
+                                                                th:value="${session.usuariosession.obraSocial}"
+                                                                />
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                type="text"
+                                                                readonly
+                                                                class="form-control input_inf-na"
+                                                                th:value="${session.usuariosession.numerdoAfiliado}"
+                                                                
+                                                                />
+                                                        </div> 
+                                                    </div>-->
+
+                        </div>
+                    </div>
+                    <div class="body_turnero">
+                        <form class="formulario" th:action="@{/turno/registro}" method="POST">
+
+                            <div>
+                                <input
+                                    type="hidden"
+                                    readonly
+                                    style="background-color: transparent; border: none;"
+                                    class="form-control input_Nom"
+                                    name="idPaciente"
+                                    th:value="${session.usuariosession.id}"
+                                    />
+                            </div>
+
+                            <div class="datos_Prof">
+                                <div class="form-group input_Id-Pro">
+
+                                    <div>
+                                        <label class="mb-2"><strong>ID Profesional</strong></label>
+                                    </div>
+                                    <!-- input es para ingresar el nombre del autor  -->
+                                    <div>
+                                        <input
+                                            type="text"
+                                            readonly
+                                            style="background-color: #98c0f6; border: none;"
+                                            class="form-control"
+                                            name="idProfesional"
+                                            th:value="${profesional.id}"
+                                            />
+                                    </div>
+                                </div>
+
+                                <div class="form-group input_NomyApe-Pro">
+                                    <div>
+                                        <label class="mb-3"
+                                               ><strong>Nombre y Apellido del Profesional</strong></label
+                                        >
+                                    </div>
+                                    <!-- input es para ingresar el nombre del autor  -->
+                                    <div>
+                                        <input
+                                            type="text"
+                                            readonly
+                                            style="background-color: #98c0f6; border: none;"
+                                            class="form-control input_Ape-Pro"
+                                            name="apellidoProfesional"
+                                            th:value="${profesional.apellido}"
+                                            />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- input es para ingresar el nombre del autor  -->
+                                    <div>
+                                        <input
+                                            type="text"
+                                            readonly
+                                            style="background-color: #98c0f6; border: none;"
+                                            class="form-control input_Nom-Pro"
+                                            name="nombreProfesional"
+                                            th:value="${profesional.nombre}"
+                                            />
+                                    </div>
+                                </div>
+
+                                <div class="form-group input_Mes_Con">
+                                    <label>Elegir el mes de Consulta</label>
+                                    <select name="mes">
+                                        <option th:each="mes : ${meses}" th:text="${mes}"></option>
+                                        <!-- falta ponerle una variable que almacene la info -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group input_dia_Con">
+                                    <label>Elegia el día de Consulta</label>
+                                    <select name="dia">
+                                        <option th:each="dia : ${dias}" th:text="${dia}"></option>
+                                        <!-- falta ponerle una variable que almacene la info -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group input_Hor_Con">
+                                    <label>Elegir el horario de Consulta</label>
+                                    <select name="hora">
+                                        <option th:each="hora : ${horas}" th:text="${hora}"></option>
+                                        <!-- falta ponerle una variable que almacene la info -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="datos_btn">
+                                <div class="datos_fyh">
+                                    <label for="mptivoConsulta">Motivo de la Consulta</label>
+                                    <textarea
+                                        placeholder="Ingrese el motivo de su consulta"
+                                        name="motivoConsulta"
+                                        cols="30"
+                                        rows="15"
+                                        ></textarea>
+                                </div>
+                                <div class="btn_buttom">
+                                    <button type="submit" class="btn btn-primary mt-3 botones">
+                                        Confirmar Turno
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+                </body>
+                <div class="container">
+                    <footer th:replace= "/fragments/footer :: footer"></footer>
+                </div>
+                </html>

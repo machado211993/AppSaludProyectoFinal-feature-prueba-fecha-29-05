@@ -1,0 +1,14 @@
+---
+name: 🚀 Pedido de nueva característica
+description: Sugerir una idea o característica
+title: "(breve descripción)"
+labels: [feature-request]
+assignees: []
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describa la nueva característica
+      description: Una descripción clara y concisa de la característica que está proponiendo.
+    validations:
+      required: true

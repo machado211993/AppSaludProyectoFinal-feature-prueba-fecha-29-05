@@ -1,0 +1,106 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/05/2023, 20:06:03
+    Author     : Juan
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.header{
+    height: 100px;
+}
+
+.footer{
+    height: 100px;
+}
+
+body{
+    min-height: calc(100vh - (100px-100px));
+    background-image: url(../imagen/fondo.svg);
+    background-repeat:no-repeat;
+    background-position-x:center;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-inicio{
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+} 
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.imagen img{
+    width: 600px;
+}
+
+.header__content{
+    width: 100%;
+}
+
+.inf-pac{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.inf-pac input{
+    font-size: 50px;
+    background-color: transparent;
+}
+
+.input_Nom{
+    text-align: start;
+}
+
+.input_Ape{
+    text-align: end;
+}
+
+.inicio-gral{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-inicio{
+    width: 200px;
+}
+
+.info-texto h1{
+    text-align: center;
+}
+
+.info-texto p{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.inicio-botones{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+}
+

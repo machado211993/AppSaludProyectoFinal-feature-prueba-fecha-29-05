@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css}" rel="stylesheet"
+              integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet" th:href="@{/css/index.css}">
+        <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+        <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap}" rel="stylesheet">
+        <link rel="shortcut icon" th:href="@{https://cdn3.iconfinder.com/data/icons/diversity-avatars/64/surgeon-woman-white-256.png}">
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;0,600;1,200&display=swap}"
+              rel="stylesheet">
+        <title>Index</title>
+
+    </head>
+
+    <body>
+        <div class="container hero">
+           
+                <section>
+                    <nav th:replace= "/fragments/navbar :: nav"></nav>
+                </section>
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-responsive" th:src="@{/imagen/fondoIndex-remove.png}" alt="fondo index">
+                    
+                </div>
+                <div class="col-lg-6 header__content">
+                    <h1 class="title">¡Bienvenidos a nuestra plataforma de servicios de salud! <span class="title-style"></span>
+                    </h1>
+                    <br>
+                    <p>¡Regístrate ahora mismo y comienza a disfrutar de los beneficios de nuestra plataforma
+                        de servicios de salud! Estamos aquí para brindarte una atención médica de calidad y facilitar
+                        tu camino hacia una vida más saludable.</p>
+                    <br>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a type="button" class="header_button btn btn-primary btn-lg" th:href="@{/login}">Ingreso Paciente</a>   
+                    </div>
+                    <br>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a type="button" class="header_button btn btn-primary btn-lg" th:href="@{/login}">Ingreso Profesional</a>   
+                    </div>
+                    <br>
+                    <div class="dts-regis d-grid gap-2 col-6 mx-auto">
+                <span>Si eres nuevo usuario <a th:href="@{/paciente/registro}">regístrate
+                        aquí</a></span>
+            </div>
+                </div>
+
+            </div>
+            <!--  <table class="table table-striped table-bordered"  id="mostrar-tabla">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Dni</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>NombreUsuario</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.dni}">ID</td>
+                        <td th:text="${usuario.nombre}">ID</td>
+                        <td th:text="${usuario.apellido}">ID</td>
+                        <td th:text="${usuario.nombreUsuario}">ID</td>
+                        <td th:text="${usuario.fechaDeNacimiento}">ID</td>
+                        <td th:text="${usuario.telefono}">ID</td>
+                        <td th:text="${usuario.email}">ID</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
+            <br>
+            </body>
+            <div class="container">
+                <footer th:replace= "/fragments/footer :: footer"></footer>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</html>
